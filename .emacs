@@ -59,7 +59,7 @@
   :init
   (progn
     (add-hook 'coq-mode-hook #'company-coq-mode)
-    (setq company-coq-disabled-features '(prettify-symbols))))
+    (setq company-coq-disabled-features '(hello prettify-symbols))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
