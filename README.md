@@ -18,7 +18,7 @@ et [company-coq](https://github.com/cpitclaudel/company-coq) :
 
     Notez que vous pouvez effectuer cette étape en ligne de commande :
 
-        cd && mv .emacs .emacs.bak  # sauvegarder votre fichier si nécessaire
+        cd && mv .emacs .emacs~  # sauvegarder votre fichier si nécessaire
         curl -fSOL https://github.com/erikmd/coq-init.el/raw/master/.emacs
 
 
