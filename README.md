@@ -32,3 +32,9 @@ et [company-coq](https://github.com/cpitclaudel/company-coq) :
     <kbd>M-x package-install-selected-packages RET</kbd>
     (<kbd>M-x</kbd> désignant <kbd>Alt+X</kbd>
     et <kbd>RET</kbd> la touche Entrée) et redémarrez emacs.
+
+3. Si vous êtes sous Windows, décommentez la ligne de configuration
+   indiquée dans le fichier `.emacs` pour que la commande suivante
+   soit exécutée au chargement de ProofGeneral :
+
+        (setq coq-prog-name "C:/Coq/bin/coqtop.exe")
