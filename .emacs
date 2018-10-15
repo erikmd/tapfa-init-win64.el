@@ -1,10 +1,15 @@
 ;;; .emacs --- Emacs conf file -*- coding: utf-8 -*-
 
 ;; Téléchargez et placez ce fichier à la racine de votre homedir (=> ~/.emacs)
+;; puis lancez GNU Emacs en exécutant la commande "emacs &" dans un terminal.
 
-;; Puis exécutez la commande Emacs "M-x package-install-selected-packages RET"
+;; L'installation des modes Emacs pour Coq devrait se lancer automatiquement
+;; et durer environ 2'30.
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; En cas de souci, faites "M-x package-install-selected-packages RET"
+;; (M-x désignant Alt+X et RET la touche Entrée) et redémarrez emacs.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Config de package.el, MELPA, use-package
 
@@ -38,6 +43,8 @@
 (eval-when-compile
   (require 'use-package))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;; Config de ProofGeneral et company-coq
 
 (use-package proof-general
@@ -54,7 +61,7 @@
     (add-hook 'coq-mode-hook #'company-coq-mode)
     (setq company-coq-disabled-features '(prettify-symbols))))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Config générale
 
