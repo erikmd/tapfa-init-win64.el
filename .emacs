@@ -31,6 +31,10 @@
  ;; If there is more than one, they won't work right.
  )
 
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
 (eval-when-compile
   (require 'use-package))
 
