@@ -1,18 +1,62 @@
-;; .emacs
+;;; .emacs --- Emacs conf file -*- coding: utf-8 -*-
 
-(custom-set-variables
- ;; uncomment to always end a file with a newline
- ;'(require-final-newline t)
- ;; uncomment to disable loading of "default.el" at startup
- ;'(inhibit-default-init t)
- ;; default to unified diffs
- '(diff-switches "-u"))
+;; Téléchargez et placez ce fichier à la racine de votre homedir (=> ~/.emacs)
+
+;; Puis exécutez la commande Emacs "M-x package-install-selected-packages RET"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Configuration globale
+;; Config de package.el, MELPA, use-package
+
+(require 'package)
+(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
+                    (not (gnutls-available-p))))
+       (proto (if no-ssl "http" "https")))
+  (add-to-list 'package-archives
+               (cons "melpa" (concat proto "://melpa.org/packages/")) t))
+(package-initialize)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(diff-switches "-u")
+ '(package-selected-packages (quote (company-coq proof-general use-package))))
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+(eval-when-compile
+  (require 'use-package))
+
+;; Config de ProofGeneral et company-coq
+
+(use-package proof-general
+  :ensure t
+  :defer t
+  :custom-face
+  (proof-locked-face ((t (:background "#add8e6")))))
+
+(use-package company-coq
+  :ensure t
+  :defer t
+  :init
+  (progn
+    (add-hook 'coq-mode-hook #'company-coq-mode)
+    (setq company-coq-disabled-features '(prettify-symbols))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Config générale
+
 (setq column-number-mode t
-      line-number-mode t)
+      line-number-mode t
+      require-final-newline t)
 
 ;; Marquage des parenthèses
 (load-library "paren")
