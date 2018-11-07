@@ -49,7 +49,7 @@
 
 (use-package proof-general
   :ensure t
-  :defer t
+  :no-require t
   :custom-face
   (proof-locked-face ((t (:background "#add8e6")))))
 
