@@ -13,14 +13,20 @@ Pour installer automatiquement
 [ProofGeneral](https://github.com/ProofGeneral/PG) et
 et [company-coq](https://github.com/cpitclaudel/company-coq) :
 
-1. Téléchargez et placez ce fichier [.emacs](./.emacs) à la racine de
-   votre homedir (`~/`)
+1. Téléchargez et placez ce fichier [.emacs](https://github.com/erikmd/coq-init.el/raw/master/.emacs)
+   à la racine de votre homedir (`~/`)
 
     Notez que vous pouvez effectuer cette étape en ligne de commande :
 
         cd && mv .emacs .emacs~  # sauvegarder votre fichier si nécessaire
         curl -fSOL https://github.com/erikmd/coq-init.el/raw/master/.emacs
 
+
+    Sinon − si vous n'utilisez pas `curl` mais la fonctionnalité de
+	téléchargement de votre navigateur −, veillez à ce que celui-ci
+	n'enlève pas le point au début du fichier
+	([`.emacs`](https://github.com/erikmd/coq-init.el/raw/master/.emacs),
+	pas `emacs`).
 
 2. Lancez GNU Emacs en exécutant la commande `emacs &` dans un
    terminal.
