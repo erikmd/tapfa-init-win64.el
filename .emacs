@@ -3,15 +3,15 @@
 ;; Téléchargez et placez ce fichier à la racine de votre homedir (=> ~/.emacs)
 ;; puis lancez GNU Emacs en exécutant la commande "emacs &" dans un terminal.
 
-;; L'installation des modes Emacs pour Coq devrait se lancer automatiquement
-;; et durer environ 2'30.
+;; L'installation des modes Emacs pour OCaml et Coq devrait se lancer
+;; automatiquement et durer environ 2'30.
 
 ;; En cas de souci, faites "M-x package-install-selected-packages RET"
 ;; (M-x désignant Alt+X et RET la touche Entrée) et redémarrez emacs.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Config de package.el, MELPA, use-package
+;; Config de package.el, MELPA et use-package
 
 (require 'package)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
@@ -27,7 +27,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(diff-switches "-u")
- '(package-selected-packages (quote (company-coq proof-general use-package))))
+ '(package-selected-packages
+   (quote (company-coq proof-general company merlin-eldoc merlin tuareg use-package))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -36,12 +37,46 @@
  ;; If there is more than one, they won't work right.
  )
 
+;; Bootstrap use-package
+
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
 
 (eval-when-compile
   (require 'use-package))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Config de Tuareg, Merlin et Company
+
+(use-package tuareg
+  :ensure t
+  :defer t
+  :init
+  (setq tuareg-opam-insinuate t))
+
+(use-package merlin
+  :ensure t
+  :hook
+  ((tuareg-mode caml-mode) . merlin-mode)
+  :config
+  (setq merlin-command 'opam))
+
+(use-package merlin-eldoc
+  :ensure t
+  :hook
+  ((tuareg-mode caml-mode) . merlin-eldoc-setup)
+  :bind (:map merlin-mode-map
+              ("C-c <C-left>" . merlin-eldoc-jump-to-prev-occurrence)
+              ("C-c <C-right>" . merlin-eldoc-jump-to-next-occurrence)))
+
+(use-package company
+  :ensure t
+  :hook
+  ((tuareg-mode caml-mode) . company-mode)
+  :config
+  (bind-key "<C-tab>" 'company-complete))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
