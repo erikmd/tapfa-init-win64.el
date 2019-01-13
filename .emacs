@@ -90,11 +90,10 @@
 
 (use-package company-coq
   :ensure t
-  :defer t
+  :hook
+  (coq-mode . company-coq-mode)
   :init
-  (progn
-    (add-hook 'coq-mode-hook #'company-coq-mode)
-    (setq company-coq-disabled-features '(hello prettify-symbols))))
+  (setq company-coq-disabled-features '(hello prettify-symbols)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
