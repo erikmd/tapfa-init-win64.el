@@ -84,14 +84,9 @@
 
 (use-package proof-general
   :ensure t
-  :no-require t
+  :mode ("\\.v\\'" . coq-mode)
   :custom-face
   (proof-locked-face ((t (:background "#add8e6")))))
-
-(use-package proof-site
-  ;; Décommentez cette ligne si vous êtes sous Windows
-  ; :config (setq coq-prog-name "C:/Coq/bin/coqtop.exe")
-  :mode ("\\.v\\'" . coq-mode))
 
 (use-package company-coq
   :ensure t
