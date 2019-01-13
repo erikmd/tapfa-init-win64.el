@@ -1,16 +1,43 @@
-# Configuration de GNU Emacs pour OCaml et Coq
+# Environnement de TP pour OCaml et Coq (avec Emacs)
 
-Ces instructions supposent que les 2 logiciels suivants sont déjà
-installés sur votre système, par exemple avec le gestionnaire de
-paquets de votre distribution GNU/Linux :
+Cette configuration nécessite d'installer [GNU
+Emacs](https://www.gnu.org/software/emacs/) et
+[opam](https://ocaml.org/) (*the OCaml package manager*).
 
-* [GNU Emacs](https://www.gnu.org/software/emacs/),
-* [OPAM](https://ocaml.org/) avec les paquets `merlin` (et `coq`).
+La procédure ci-dessous concerne uniquement les distributions
+GNU/Linux basées sur Debian. Pour les Windows ou macOS, veuillez
+consulter le tutoriel fourni sur Moodle.
 
-Pour plus de détails, voir le tutoriel sur Moodle. En particulier pour
-configurer Merlin vis-à-vis d'Emacs, **n'exécutez pas la commande
-`opam user-setup install`** suggérée à la fin de l'installation de
-Merlin, mais suivez les instructions ci-dessous.
+## Installation sous GNU/Linux Ubuntu 16.04+ ou Debian 9+
+
+1. Installer `emacs` (version `>= 24.3`) et `rlwrap` (*optionnel*) :
+
+        sudo apt-get update
+        sudo apt-get install emacs25 rlwrap
+
+1. Installer les dépendances d'`opam` :
+
+        sudo apt-get install aspcud bubblewrap build-essential curl git m4 tar unzip
+
+1. Installer `opam` 2.0 (comme les paquets Debian/Ubuntu sont trop
+   anciens, mieux vaut utiliser le [script d'installation
+   officiel](https://opam.ocaml.org/doc/Install.html)) :
+
+        curl -fOL https://github.com/ocaml/opam/raw/master/shell/install.sh
+        sh ./install.sh
+
+1. Configurer `opam` et installer `merlin` :
+
+        opam init --auto-setup --yes --compiler=ocaml-base-compiler.4.05.0
+        eval $(opam env)
+        opam install -y merlin
+
+    Installer `coq` (déjà installé sur les PC de l'UPS, sauter alors
+    cette étape) :
+
+        opam install coq.8.8.2
+
+1. **Ne pas exécuter `opam user-setup install`**.
 
 ## Installation des modes Emacs pour OCaml et Coq
 
@@ -21,23 +48,22 @@ Pour installer automatiquement les modes
 [ProofGeneral](https://github.com/ProofGeneral/PG) et
 [company-coq](https://github.com/cpitclaudel/company-coq) :
 
-1. Téléchargez et placez ce fichier [.emacs](https://github.com/erikmd/tapfa-init.el/raw/master/.emacs)
-   à la racine de votre homedir (`~/`)
+1. Téléchargez et placez le fichier `.emacs` fourni à la racine de
+   votre *homedir* (`~/`) :
 
-    Notez que vous pouvez effectuer cette étape en ligne de commande :
+        cd                    # pour revenir à la racine du homedir (~/)
+        mv -f .emacs .emacs~  # pour sauvegarder votre fichier
+        curl -fOL https://github.com/erikmd/tapfa-init.el/raw/master/.emacs
 
-        cd && mv .emacs .emacs~  # sauvegarder votre fichier si nécessaire
-        curl -fSOL https://github.com/erikmd/tapfa-init.el/raw/master/.emacs
+    > *Note* : Si vous n'utilisez pas `curl` mais la fonctionnalité de
+    > téléchargement de votre navigateur, veillez à ce que celui-ci
+    > n'enlève pas le point au début du fichier
+    > ([`.emacs`](https://github.com/erikmd/tapfa-init.el/raw/master/.emacs),
+    > pas `emacs`).
 
+1. Lancer Emacs :
 
-    Sinon − si vous n'utilisez pas `curl` mais la fonctionnalité de
-	téléchargement de votre navigateur −, veillez à ce que celui-ci
-	n'enlève pas le point au début du fichier
-	([`.emacs`](https://github.com/erikmd/tapfa-init.el/raw/master/.emacs),
-	pas `emacs`).
-
-2. Lancez GNU Emacs en exécutant la commande `emacs &` dans un
-   terminal.
+        emacs &
 
     L'installation des modes Emacs pour OCaml et Coq devrait se lancer
     automatiquement et durer environ 2'30.
@@ -46,3 +72,6 @@ Pour installer automatiquement les modes
     <kbd>M-x package-install-selected-packages RET</kbd>
     (<kbd>M-x</kbd> désignant <kbd>Alt+X</kbd>
     et <kbd>RET</kbd> la touche Entrée) et redémarrez emacs.
+
+    Vous pouvez alors créer ou ouvrir un fichier OCaml en tapant
+    <kbd>C-x C-f tp1.ml RET</kbd>
