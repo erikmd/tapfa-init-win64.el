@@ -73,5 +73,5 @@ Pour installer automatiquement les modes
     (<kbd>M-x</kbd> désignant <kbd>Alt+X</kbd>
     et <kbd>RET</kbd> la touche Entrée) et redémarrez emacs.
 
-    Vous pouvez alors créer ou ouvrir un fichier OCaml en tapant
+    Vous pouvez alors **créer ou ouvrir un fichier OCaml** en tapant
     <kbd>C-x C-f tp1.ml RET</kbd>
