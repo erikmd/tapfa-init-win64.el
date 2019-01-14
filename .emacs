@@ -53,15 +53,16 @@
 (use-package tuareg
   :ensure t
   :defer t
-  :init
-  (setq tuareg-opam-insinuate t))
+  :config
+  (setq tuareg-interactive-program "ocaml"
+        tuareg-opam "opam"))
 
 (use-package merlin
   :ensure t
   :hook
   ((tuareg-mode caml-mode) . merlin-mode)
   :config
-  (setq merlin-command 'opam))
+  (setq merlin-command "ocamlmerlin"))
 
 (use-package merlin-eldoc
   :ensure t
@@ -85,6 +86,8 @@
 (use-package proof-general
   :ensure t
   :mode ("\\.v\\'" . coq-mode)
+  :config
+  (setq coq-prog-name "coqtop")
   :custom-face
   (proof-locked-face ((t (:background "#add8e6")))))
 
