@@ -4,69 +4,101 @@ Cette configuration nécessite d'installer [GNU
 Emacs](https://www.gnu.org/software/emacs/) et
 [opam](https://ocaml.org/) (*the OCaml package manager*).
 
-La procédure ci-dessous concerne uniquement les distributions
-GNU/Linux basées sur Debian. Pour les Windows ou macOS, veuillez
-consulter le tutoriel fourni sur Moodle.
+La procédure ci-dessous concerne uniquement Windows 10 (64 bits).
 
-## Installation sous GNU/Linux Ubuntu 16.04+ ou Debian 9+
+Pour GNU/Linux, consulter <https://github.com/erikmd/tapfa-init.el>.
 
-1. Installer `emacs` (version `>= 24.3`) et `rlwrap` (*optionnel*) :
+## Installation sous Windows 10 (64 bits) avec WSL
 
-        sudo apt-get update
-        sudo apt-get install emacs25 rlwrap
+1.  Installer GNU Emacs 26 à partir de
+    <https://vigou3.gitlab.io/emacs-modified-windows/>
 
-1. Installer les dépendances d'`opam` :
+1.  Activer WSL dans Windows 10 :
+    <https://docs.microsoft.com/en-us/windows/wsl/install-win10>
 
-        sudo apt-get install aspcud bubblewrap build-essential curl git m4 tar unzip
+1.  Installer une distribution GNU/Linux (Debian ou Ubuntu) à partir de
+    <https://aka.ms/wslstore>
 
-1. Installer `opam` 2.0 (comme les paquets Debian/Ubuntu sont trop
-   anciens, mieux vaut utiliser le [script d'installation
-   officiel](https://opam.ocaml.org/doc/Install.html)) :
+1.  Ouvrir un terminal WSL (par ex. en tapant le nom de la distribution
+    dans le Menu Démarrer)
 
-        curl -fOL https://github.com/ocaml/opam/raw/master/shell/install.sh
-        sh ./install.sh
+1.  Installer `emacs` (version `>= 24.3`) et `rlwrap` (*optionnel*) :
 
-1. Configurer `opam` et installer `merlin` :
+    ```
+    sudo apt-get update && sudo apt-get install emacs25 rlwrap
+    ```
+1.  Installer les dépendances d'`opam` :
 
-        opam init --auto-setup --yes --compiler=ocaml-base-compiler.4.05.0
-        eval $(opam env)
-        opam install -y merlin
+    ```
+    sudo apt-get install aspcud bubblewrap build-essential curl git m4 tar unzip
+    ```
 
-    Installer `coq` (déjà installé sur les PC de l'UPS, sauter alors
-    cette étape) :
+1.  Installer `opam` 2.0 (comme les paquets Debian/Ubuntu sont trop
+    anciens, mieux vaut utiliser le [script d'installation
+    officiel](http://opam.ocaml.org/doc/Install.html)) :
 
-        opam install coq.8.8.2
+    ```
+    curl -fOL https://github.com/ocaml/opam/raw/master/shell/install.sh
+    sh ./install.sh
+    ```
 
-1. **Ne pas exécuter `opam user-setup install`**.
+1.  Configurer `opam` et installer `merlin` et `coq` (l'option
+    `--disable-sandboxing` est requise) :
 
-## Installation des modes Emacs pour OCaml et Coq
+    ```
+    opam init --disable-sandboxing --auto-setup --yes --compiler=ocaml-base-compiler.4.05.0
+    eval $(opam env)
+    opam install -y merlin coq.8.8.2
+    ```
 
-Pour installer automatiquement les modes
-[tuareg](https://github.com/ocaml/tuareg),
-[merlin-eldoc](https://github.com/Khady/merlin-eldoc),
-[company](https://github.com/company-mode/company-mode),
-[ProofGeneral](https://github.com/ProofGeneral/PG) et
-[company-coq](https://github.com/cpitclaudel/company-coq) :
+    **Ne pas exécuter `opam user-setup install`**.
 
-1. Téléchargez et placez le fichier `.emacs` fourni à la racine de
-   votre *homedir* (`~/`) :
+1.  Installer `wsl-alias` :
 
-        cd                    # pour revenir à la racine du homedir (~/)
-        mv -f .emacs .emacs~  # pour sauvegarder votre fichier
-        curl -fOL https://github.com/erikmd/tapfa-init.el/raw/master/.emacs
+    ```
+    curl -fOL https://raw.githubusercontent.com/leongrdic/wsl-alias/master/install.sh
+    bash ./install.sh
+    ```
 
-    > *Note* : Si vous n'utilisez pas `curl` mais la fonctionnalité de
-    > téléchargement de votre navigateur, veillez à ce que celui-ci
-    > n'enlève pas le point au début du fichier
-    > ([`.emacs`](https://github.com/erikmd/tapfa-init.el/raw/master/.emacs),
-    > pas `emacs`).
+    et valider les questions posées.
 
-1. Lancer Emacs :
+1.  Ajouter comme indiqué, le chemin suivant à votre `PATH` Windows :
+    `%userprofile%\wsl-alias` (vous pouvez vous inspirer de la page
+    <https://stackoverflow.com/a/44272417>).
 
-        emacs &
+1.  Ouvrir un terminal cmd.exe (a.k.a. MS-DOS, **pas WSL**) et taper les
+    commandes suivantes :
 
-    L'installation des modes Emacs pour OCaml et Coq devrait se lancer
-    automatiquement et durer environ 2'30.
+    ```
+    b wsl-alias add rlwrap rlwrap
+    b wsl-alias add opam opam
+    b wsl-alias add ocaml "opam exec -- ocaml"
+    b wsl-alias add ocamlc "opam exec -- ocamlc"
+    b wsl-alias add ocamlmerlin "opam exec -- ocamlmerlin"
+    b wsl-alias add coqtop "opam exec -- coqtop"
+    b wsl-alias add coqc "opam exec -- coqc"
+    b wsl-alias list  # pour vérifier
+    b                 # sans argument, pour passer en mode WSL
+    ```
+
+1.  Vérifier que vous êtes bien dans le répertoire
+    `/mnt/c/Users/VOTRELOGIN` (dossier personnel Windows) et télécharger
+    le fichier `.emacs` fourni :
+
+    ```
+    mv -f .emacs .emacs~  # pour sauvegarder votre fichier au cas où
+    curl -fOL https://github.com/erikmd/tapfa-init-win64.el/raw/master/.emacs
+    ```
+
+1.  Lancer Emacs à partir de Windows.
+
+    L'installation des modes Emacs pour OCaml et Coq
+	([tuareg](https://github.com/ocaml/tuareg),
+	[merlin-eldoc](https://github.com/Khady/merlin-eldoc),
+	[company](https://github.com/company-mode/company-mode),
+	[ProofGeneral](https://github.com/ProofGeneral/PG) et
+	[company-coq](https://github.com/cpitclaudel/company-coq)) devrait
+	se lancer automatiquement et durer environ 2'30.
 
     En cas de souci, faites
     <kbd>M-x package-install-selected-packages RET</kbd>
