@@ -86,7 +86,7 @@ Pour GNU/Linux, consulter <https://github.com/erikmd/tapfa-init.el>.
     le fichier `.emacs` fourni :
 
     ```
-    mv -f .emacs .emacs~  # pour sauvegarder votre fichier au cas où
+    mv -f .emacs .emacs.bak  # pour sauvegarder votre fichier au cas où
     curl -fOL https://github.com/erikmd/tapfa-init-win64.el/raw/master/.emacs
     ```
 
