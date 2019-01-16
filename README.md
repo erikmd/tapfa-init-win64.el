@@ -22,14 +22,10 @@ Pour GNU/Linux, consulter <https://github.com/erikmd/tapfa-init.el>.
 1.  Ouvrir un terminal WSL (par ex. en tapant le nom de la distribution
     dans le Menu Démarrer)
 
-1.  Installer `emacs` (version `>= 24.3`) et `rlwrap` (*optionnel*) :
-
-    ```
-    sudo apt-get update && sudo apt-get install emacs25 rlwrap
-    ```
 1.  Installer les dépendances d'`opam` :
 
     ```
+    sudo apt-get update
     sudo apt-get install aspcud bubblewrap build-essential curl git m4 tar unzip
     ```
 
