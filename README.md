@@ -53,7 +53,7 @@ Pour GNU/Linux, consulter <https://github.com/erikmd/tapfa-init.el>.
 1.  Installer `wsl-alias` :
 
     ```
-    curl -fOL https://raw.githubusercontent.com/leongrdic/wsl-alias/master/install.sh
+    curl -fOL https://github.com/leongrdic/wsl-alias/raw/master/install.sh
     bash ./install.sh
     ```
 
