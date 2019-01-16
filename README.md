@@ -20,7 +20,8 @@ Pour GNU/Linux, consulter <https://github.com/erikmd/tapfa-init.el>.
     <https://aka.ms/wslstore>
 
 1.  Ouvrir un terminal WSL (par ex. en tapant le nom de la distribution
-    dans le Menu Démarrer)
+    dans le Menu Démarrer) et assurez-vous que vous avez un compte
+    utilisateur Linux "normal" (**pas `root`**)
 
 1.  Installer les dépendances d'`opam` :
 
