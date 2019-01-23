@@ -64,13 +64,14 @@
   :config
   (setq merlin-command "ocamlmerlin"))
 
-(use-package merlin-eldoc
-  :ensure t
-  :hook
-  ((tuareg-mode caml-mode) . merlin-eldoc-setup)
-  :bind (:map merlin-mode-map
-              ("C-c <C-left>" . merlin-eldoc-jump-to-prev-occurrence)
-              ("C-c <C-right>" . merlin-eldoc-jump-to-next-occurrence)))
+;;;  Désactivé car induit un ralentissement sous Windows+WSL
+;; (use-package merlin-eldoc
+;;   :ensure t
+;;   :hook
+;;   ((tuareg-mode caml-mode) . merlin-eldoc-setup)
+;;   :bind (:map merlin-mode-map
+;;               ("C-c <C-left>" . merlin-eldoc-jump-to-prev-occurrence)
+;;               ("C-c <C-right>" . merlin-eldoc-jump-to-next-occurrence)))
 
 (use-package company
   :ensure t
