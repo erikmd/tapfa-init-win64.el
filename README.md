@@ -23,10 +23,15 @@ Pour GNU/Linux, consulter <https://github.com/erikmd/tapfa-init.el>.
     dans le Menu Démarrer) et assurez-vous que vous avez un compte
     utilisateur Linux "normal" (**pas `root`**)
 
-1.  Installer les dépendances d'`opam` :
+1.  Mettre à jour l'index des paquets :
 
     ```
     sudo apt-get update
+    ```
+
+1.  Installer les dépendances d'`opam` :
+
+    ```
     sudo apt-get install aspcud bubblewrap build-essential curl git m4 tar unzip
     ```
 
