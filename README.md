@@ -96,7 +96,7 @@ Pour GNU/Linux, consulter <https://github.com/erikmd/tapfa-init.el>.
 
     L'installation des modes Emacs pour OCaml et Coq
 	([tuareg](https://github.com/ocaml/tuareg),
-	[merlin-eldoc](https://github.com/Khady/merlin-eldoc),
+	[merlin](https://github.com/ocaml/merlin),
 	[company](https://github.com/company-mode/company-mode),
 	[ProofGeneral](https://github.com/ProofGeneral/PG) et
 	[company-coq](https://github.com/cpitclaudel/company-coq)) devrait
