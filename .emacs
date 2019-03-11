@@ -87,8 +87,8 @@
 (use-package proof-general
   :ensure t
   :mode ("\\.v\\'" . coq-mode)
-  :config
-  (setq coq-prog-name "coqtop")
+  :init                                 ; (:config doesn't work here)
+  (setq coq-prog-name "coqtop")         ; or "C:/Coq/bin/coqtop.exe"…
   :custom-face
   (proof-locked-face ((t (:background "#add8e6")))))
 
