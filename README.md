@@ -51,7 +51,7 @@ Pour GNU/Linux, consulter <https://github.com/erikmd/tapfa-init.el>.
     opam init --disable-sandboxing --auto-setup --yes --compiler=ocaml-base-compiler.4.05.0
     eval $(opam env)
 	opam repo add --all-switches --set-default coq-released https://coq.inria.fr/opam/released
-    opam pin add -n -k version coq 8.8.2
+    opam pin add -n -k version coq 8.11.0
     opam install -y -j 2 merlin coq
     ```
 
