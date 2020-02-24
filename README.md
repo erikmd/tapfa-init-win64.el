@@ -85,6 +85,7 @@ Pour macOS, consulter <https://github.com/erikmd/tapfa-init-macos.el>.
     b wsl-alias add learn-ocaml-client "wrapper-learn-ocaml-client"
     b wsl-alias add utop "opam exec -- utop"
     b wsl-alias add coqtop "opam exec -- coqtop"
+	b wsl-alias add coqidetop "opam exec -- coqidetop"
     b wsl-alias add coqc "opam exec -- coqc"
     b wsl-alias list  # pour vérifier
     b                 # sans argument, pour passer en mode WSL
