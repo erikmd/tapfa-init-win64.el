@@ -147,3 +147,7 @@ Pour macOS, consulter <https://github.com/erikmd/tapfa-init-macos.el>.
 1. Et pour utiliser le mode
    [`learn-ocaml`](https://github.com/pfitaxel/learn-ocaml.el#usage),
    vous pouvez taper <kbd>M-x learn-ocaml-mode RET</kbd>.
+
+## Remarque
+
+En cas de problème avec cette configuration, ouvrez une [issue](https://github.com/erikmd/tapfa-init-win64.el/issues) ou envoyez-moi un [e-mail](https://github.com/erikmd).
