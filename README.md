@@ -81,6 +81,7 @@ Pour macOS, consulter <https://github.com/erikmd/tapfa-init-macos.el>.
     b wsl-alias add ocaml "opam exec -- ocaml"
     b wsl-alias add ocamlc "opam exec -- ocamlc"
     b wsl-alias add ocamlmerlin "opam exec -- ocamlmerlin"
+    b wsl-alias add learn-ocaml-client "opam exec -- learn-ocaml-client"
     b wsl-alias add utop "opam exec -- utop"
     b wsl-alias add coqtop "opam exec -- coqtop"
     b wsl-alias add coqc "opam exec -- coqc"
