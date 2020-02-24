@@ -102,13 +102,14 @@ Pour macOS, consulter <https://github.com/erikmd/tapfa-init-macos.el>.
     curl -fOL https://github.com/erikmd/tapfa-init-win64.el/raw/master/.emacs
     ```
 
-1.  Lancer Emacs en ligne de commande à partir de WSL en exécutant :
+1.  Toujours dans la **ligne de commande WSL**, éditer le fichier
+     `~/.wsl-alias/env.sh` en tapant :
 
     ```
-    emacs ~/.wsl-alias/env.sh
+    nano ~/.wsl-alias/env.sh
     ```
 	
-	Ajouter à la fin du fichier (qui doit déjà exister) :
+	Ajouter à la fin de ce fichier (qui doit déjà exister) :
 
     ```
     wrapper-learn-ocaml-client() {
@@ -121,8 +122,8 @@ Pour macOS, consulter <https://github.com/erikmd/tapfa-init-macos.el>.
     }
     ```
 
-    Sauver avec <kbd>C-x C-s</kbd> et quitter avec <kbd>C-x C-c</kbd>
-    (c'est-à-dire, <kbd>Ctrl+X Ctrl+S</kbd> et <kbd>Ctrl+X, Ctrl+C</kbd>)
+    Sauver avec <kbd>Ctrl+O</kbd> <kbd>Entrée</kbd> et quitter avec
+    <kbd>Ctrl+X</kbd>.
 
 1.  Lancer Emacs à partir de Windows.
 
