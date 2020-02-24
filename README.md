@@ -78,7 +78,6 @@ Pour macOS, consulter <https://github.com/erikmd/tapfa-init-macos.el>.
     commandes suivantes :
 
     ```
-    b wsl-alias add rlwrap rlwrap
     b wsl-alias add opam opam
     b wsl-alias add ocaml "opam exec -- ocaml"
     b wsl-alias add ocamlc "opam exec -- ocamlc"
