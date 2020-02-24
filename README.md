@@ -41,7 +41,7 @@ Pour macOS, consulter <https://github.com/erikmd/tapfa-init-macos.el>.
 
 1.  Installer `opam` 2.0 (comme les paquets Debian/Ubuntu sont trop
     anciens, mieux vaut utiliser le [script d'installation
-    officiel](http://opam.ocaml.org/doc/Install.html)) :
+    officiel](https://opam.ocaml.org/doc/Install.html)) :
 
     ```
     curl -fOL https://github.com/ocaml/opam/raw/master/shell/install.sh
