@@ -1,7 +1,6 @@
 # Environnement de TP pour OCaml et Coq (avec Emacs)
 
-Cette configuration nécessite d'installer [GNU
-Emacs](https://www.gnu.org/software/emacs/) et
+Cette configuration nécessite d'installer GNU Emacs et
 [opam](https://ocaml.org/) (*the OCaml package manager*).
 
 La procédure ci-dessous concerne uniquement Windows 10 (64 bits).
