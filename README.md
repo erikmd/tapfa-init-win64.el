@@ -8,6 +8,8 @@ La procédure ci-dessous concerne uniquement Windows 10 (64 bits).
 
 Pour GNU/Linux, consulter <https://github.com/erikmd/tapfa-init.el>.
 
+Pour macOS, consulter <https://github.com/erikmd/tapfa-init-macos.el>.
+
 ## Installation sous Windows 10 (64 bits) avec WSL
 
 1.  Installer GNU Emacs 26 à partir de
