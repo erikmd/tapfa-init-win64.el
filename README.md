@@ -58,6 +58,8 @@ Pour macOS, consulter <https://github.com/erikmd/tapfa-init-macos.el>.
     opam install -y -j 2 merlin utop learn-ocaml-client coq
     ```
 
+    (*Les commandes précédentes doivent être copiées ligne à ligne !*)
+
     **Ne pas exécuter `opam user-setup install`**.
 
 1.  Installer `wsl-alias` :
@@ -90,12 +92,15 @@ Pour macOS, consulter <https://github.com/erikmd/tapfa-init-macos.el>.
     b                 # sans argument, pour passer en mode WSL
     ```
 
+    (*Les commandes précédentes doivent être copiées ligne à ligne !*)
+
 1.  Vérifier que vous êtes bien dans le répertoire
     `/mnt/c/Users/VOTRELOGIN` (dossier personnel Windows) et télécharger
     le fichier `.emacs` fourni :
 
     ```
     mv -f .emacs .emacs.bak  # pour sauvegarder votre fichier au cas où
+    # si la ligne précédente renvoie une erreur, ne pas en tenir compte
     curl -fOL https://github.com/erikmd/tapfa-init-win64.el/raw/master/.emacs
     ```
 
