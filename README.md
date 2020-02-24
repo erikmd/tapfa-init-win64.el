@@ -83,7 +83,7 @@ Pour macOS, consulter <https://github.com/erikmd/tapfa-init-macos.el>.
     b wsl-alias add ocaml "opam exec -- ocaml"
     b wsl-alias add ocamlc "opam exec -- ocamlc"
     b wsl-alias add ocamlmerlin "opam exec -- ocamlmerlin"
-    b wsl-alias add learn-ocaml-client "opam exec -- learn-ocaml-client"
+    b wsl-alias add learn-ocaml-client "wrapper-learn-ocaml-client"
     b wsl-alias add utop "opam exec -- utop"
     b wsl-alias add coqtop "opam exec -- coqtop"
     b wsl-alias add coqc "opam exec -- coqc"
@@ -101,6 +101,25 @@ Pour macOS, consulter <https://github.com/erikmd/tapfa-init-macos.el>.
     mv -f .emacs .emacs.bak  # pour sauvegarder votre fichier au cas où
     # si la ligne précédente renvoie une erreur, ne pas en tenir compte
     curl -fOL https://github.com/erikmd/tapfa-init-win64.el/raw/master/.emacs
+    ```
+
+1.  Lancer Emacs à partir de WSL en exécutant :
+
+    ```
+    emacs ~/.wsl-alias/env.sh
+    ```
+	
+	Ajouter à la fin du fichier (qui doit déjà exister) :
+
+    ```
+    wrapper-learn-ocaml-client() {
+        declare -a args
+        args=()
+        for arg; do
+        args[${#args[@]}]="$(sed -e 's|htt/mnt/p\\|http://|; s|http/mnt/s\\|https://|' <<< "$arg")"
+        done
+        exec opam exec -- learn-ocaml-client "${args[@]}"
+    }
     ```
 
 1.  Lancer Emacs à partir de Windows.
