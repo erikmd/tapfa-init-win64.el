@@ -44,15 +44,15 @@ Pour GNU/Linux, consulter <https://github.com/erikmd/tapfa-init.el>.
     sh ./install.sh
     ```
 
-1.  Configurer `opam` et installer `merlin` et `coq` (l'option
-    `--disable-sandboxing` est requise) :
+1.  Configurer `opam` et installer `merlin`, `learn-ocaml-client` et
+    `coq` (l'option `--disable-sandboxing` est requise) :
 
     ```
     opam init --disable-sandboxing --auto-setup --yes --compiler=ocaml-base-compiler.4.05.0
     eval $(opam env)
 	opam repo add --all-switches --set-default coq-released https://coq.inria.fr/opam/released
     opam pin add -n -k version coq 8.11.0
-    opam install -y -j 2 merlin coq
+    opam install -y -j 2 merlin learn-ocaml-client coq
     ```
 
     **Ne pas exécuter `opam user-setup install`**.
@@ -111,3 +111,7 @@ Pour GNU/Linux, consulter <https://github.com/erikmd/tapfa-init.el>.
 
     Vous pouvez alors **créer ou ouvrir un fichier OCaml** en tapant
     <kbd>C-x C-f tp1.ml RET</kbd>
+
+1. Et pour utiliser le mode
+   [`learn-ocaml`](https://github.com/pfitaxel/learn-ocaml.el#usage),
+   vous pouvez taper <kbd>M-x learn-ocaml-mode RET</kbd>.

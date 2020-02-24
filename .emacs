@@ -80,6 +80,9 @@
   :config
   (bind-key "<backtab>" 'company-complete))
 
+(use-package learn-ocaml
+  :ensure t)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Config de ProofGeneral et company-coq
