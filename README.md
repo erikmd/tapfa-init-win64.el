@@ -103,6 +103,7 @@ Pour macOS, consulter <https://github.com/erikmd/tapfa-init-macos.el>.
 	([tuareg](https://github.com/ocaml/tuareg),
 	[merlin](https://github.com/ocaml/merlin),
 	[company](https://github.com/company-mode/company-mode),
+	[learn-ocaml](https://github.com/pfitaxel/learn-ocaml.el),
 	[ProofGeneral](https://github.com/ProofGeneral/PG) et
 	[company-coq](https://github.com/cpitclaudel/company-coq)) devrait
 	se lancer automatiquement et durer environ 2'30.
