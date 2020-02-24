@@ -17,8 +17,10 @@ Pour macOS, consulter <https://github.com/erikmd/tapfa-init-macos.el>.
 1.  Activer WSL dans Windows 10 :
     <https://docs.microsoft.com/en-us/windows/wsl/install-win10>
 
-1.  Installer une distribution GNU/Linux (Debian ou Ubuntu) à partir de
-    <https://aka.ms/wslstore>
+1.  Installer une distribution GNU/Linux
+    ([Debian](https://www.microsoft.com/store/apps/9MSVKQC78PK6) ou
+    [Ubuntu](https://www.microsoft.com/store/apps/9N9TNGVNDL3Q)) à
+    partir de Microsoft Store.
 
 1.  Ouvrir un terminal WSL (par ex. en tapant le nom de la distribution
     dans le Menu Démarrer) et assurez-vous que vous avez un compte
