@@ -44,15 +44,15 @@ Pour GNU/Linux, consulter <https://github.com/erikmd/tapfa-init.el>.
     sh ./install.sh
     ```
 
-1.  Configurer `opam` et installer `merlin`, `learn-ocaml-client` et
-    `coq` (l'option `--disable-sandboxing` est requise) :
+1.  Configurer `opam` et installer `merlin`, `utop`,
+    `learn-ocaml-client` et `coq` (**`--disable-sandboxing` est requis**) :
 
     ```
     opam init --disable-sandboxing --auto-setup --yes --compiler=ocaml-base-compiler.4.05.0
     eval $(opam env)
 	opam repo add --all-switches --set-default coq-released https://coq.inria.fr/opam/released
     opam pin add -n -k version coq 8.11.0
-    opam install -y -j 2 merlin learn-ocaml-client coq
+    opam install -y -j 2 merlin utop learn-ocaml-client coq
     ```
 
     **Ne pas exécuter `opam user-setup install`**.
@@ -79,6 +79,7 @@ Pour GNU/Linux, consulter <https://github.com/erikmd/tapfa-init.el>.
     b wsl-alias add ocaml "opam exec -- ocaml"
     b wsl-alias add ocamlc "opam exec -- ocamlc"
     b wsl-alias add ocamlmerlin "opam exec -- ocamlmerlin"
+    b wsl-alias add utop "opam exec -- utop"
     b wsl-alias add coqtop "opam exec -- coqtop"
     b wsl-alias add coqc "opam exec -- coqc"
     b wsl-alias list  # pour vérifier
