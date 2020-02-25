@@ -119,7 +119,7 @@ Pour macOS, consulter <https://github.com/erikmd/tapfa-init-macos.el>.
         declare -a args
         args=()
         for arg; do
-        args[${#args[@]}]="$(sed -e 's|htt/mnt/p\\|http://|; s|http/mnt/s\\|https://|' <<< "$arg")"
+        args[${#args[@]}]="$(sed -e 's|htt/mnt/p\\\?|http://|; s|http/mnt/s\\\?|https://|' <<< "$arg")"
         done
         exec opam exec -- learn-ocaml-client "${args[@]}"
     }
