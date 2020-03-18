@@ -80,8 +80,8 @@
   :config
   (bind-key "<backtab>" 'company-complete))
 
-(use-package learn-ocaml
-  :ensure t)
+;; (use-package learn-ocaml
+;;   :ensure t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
