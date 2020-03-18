@@ -5,9 +5,9 @@ Cette configuration nécessite d'installer GNU Emacs et
 
 La procédure ci-dessous concerne uniquement Windows 10 (64 bits).
 
-Pour GNU/Linux, consulter <https://github.com/erikmd/tapfa-init.el>.
+Pour GNU/Linux, consulter <https://github.com/erikmd/tapfa-init.el/tree/coq>.
 
-Pour macOS, consulter <https://github.com/erikmd/tapfa-init-macos.el>.
+Pour macOS, consulter <https://github.com/erikmd/tapfa-init-macos.el/tree/coq>.
 
 ## Installation sous Windows 10 (64 bits) avec WSL
 
