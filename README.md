@@ -101,7 +101,7 @@ Pour macOS, consulter <https://github.com/erikmd/tapfa-init-macos.el/tree/coq#re
     ```
     mv -f .emacs .emacs.bak  # pour sauvegarder votre fichier au cas où
     # si la ligne précédente renvoie une erreur, ne pas en tenir compte
-    curl -fOL https://github.com/erikmd/tapfa-init-win64.el/raw/master/.emacs
+    curl -fOL https://github.com/erikmd/tapfa-init-win64.el/raw/coq/.emacs
     ```
 
 1.  Toujours dans la **ligne de commande WSL**, éditer le fichier
